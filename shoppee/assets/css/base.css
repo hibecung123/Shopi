@@ -42,6 +42,17 @@ html
         opacity:1;
     }
 }
+@keyframes grow {
+    from
+    {
+        transform: scale(var(--grow-from));
+    }
+    to 
+    {
+        transform:scale(var(--grow-to));
+    }
+}
+
 .modal
 {
     position:fixed;
@@ -50,6 +61,7 @@ html
     bottom:0;
     left:0;
     display:flex;
+    animation: openup linear 0.1s;
 }
 .modal__overlay{
     position:absolute;
@@ -59,16 +71,19 @@ html
 }
 .modal__body
 {
+    --grow-from:0.7;
+    --grow-to:1;
     height:450px;
     width:500px;
     margin:auto;
     position:relative;
+    animation: grow linear 0.1s;
     
 }
 /* Button style */
 .btn
 {
-    min-width: 142px;
+    min-width: 150px;
     min-height: 36px;
     text-decoration: none;
     border-radius: 3px;
